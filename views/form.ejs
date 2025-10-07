@@ -1,11 +1,14 @@
-<%- include('./partials/nav') %>
-<h2>Post Message</h2>
-<form method="POST" action="/new">
-  <label for="messageUser">Name:</label>
-  <input type="text" id="messageUser" name="messageUser" />
+<%- include('./partials/header') %>
+<main class="container py-5">
+  <h2>Post Message</h2>
+  <form method="POST" action="/new">
+    <label for="messageUser">Name:</label>
+    <input type="text" id="messageUser" name="messageUser" />
 
-  <label for="messageText">Message:</label>
-  <input type="text" id="messageText" name="messageText" />
+    <label for="messageText">Message:</label>
+    <input type="text" id="messageText" name="messageText" />
 
-  <button type="submit">Send</button>
-</form>
+    <button type="submit">Send</button>
+  </form>
+</main>
+<%- include('./partials/footer') %>

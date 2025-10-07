@@ -1,21 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= title %></title>
-  </head>
-  <body>
-    <%-include('./partials/nav') %>
-    <h1>Messages</h1>
-    <ul>
-      <% for(const message of messages) { %>
-      <li>
-        <h3><%= message.text %></h3>
-        <p><%= message.user %></p>
-        <p><%= message.added %></p>
-      </li>
-      <% } %>
-    </ul>
-  </body>
-</html>
+<%- include('./partials/header') %>
+<main class="container py-5">
+  <h1>Messages</h1>
+  <ul class="pt-4 list-unstyled">
+    <% messages.forEach(function(message, index) { %>
+    <li>
+      <h3><%= message.text %></h3>
+      <a class="navbar-brand" href="/message/<%= index %>">View Details</a>
+      <p><%= message.user %></p>
+    </li>
+    <% }) %>
+  </ul>
+</main>
+<%- include('./partials/footer') %>
