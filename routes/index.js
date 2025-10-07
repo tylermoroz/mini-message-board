@@ -1,5 +1,5 @@
 const express = require("express");
-const router = express.Router();
+const indexRouter = express.Router();
 
 const messages = [
   {
@@ -12,10 +12,23 @@ const messages = [
     user: "Charles",
     added: new Date(),
   },
+  {
+    text: "Killin the game!",
+    user: "Stunna boy",
+    added: new Date(),
+  },
 ];
 
-router.get("/", (req, res) => {
+indexRouter.get("/", (req, res) => {
   res.render("index", { messages, title: "Message Board" });
 });
 
-module.exports = router;
+indexRouter.post("/new", (req, res) => {
+  const messageText = req.body.messageText;
+  const messageUser = req.body.messageUser;
+
+  messages.push({ text: messageText, user: messageUser, added: new Date() });
+  res.redirect("/");
+});
+
+module.exports = indexRouter;
