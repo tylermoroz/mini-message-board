@@ -5,8 +5,10 @@
     <% messages.forEach(function(message, index) { %>
     <li>
       <h3><%= message.text %></h3>
-      <a class="navbar-brand" href="/message/<%= index %>">View Details</a>
-      <p><%= message.user %></p>
+      <p class="m-0"><%= message.user %></p>
+      <a class="navbar-brand d-inline-block mb-3" href="/message/<%= index %>"
+        >View Details</a
+      >
     </li>
     <% }) %>
   </ul>

@@ -1,14 +1,21 @@
 <%- include('./partials/header') %>
 <main class="container py-5">
   <h2>Post Message</h2>
-  <form method="POST" action="/new">
-    <label for="messageUser">Name:</label>
-    <input type="text" id="messageUser" name="messageUser" />
-
-    <label for="messageText">Message:</label>
-    <input type="text" id="messageText" name="messageText" />
-
-    <button type="submit">Send</button>
-  </form>
+    <form method="POST" action="/new">
+      <div class="row mb-3">
+        <div class="col-sm-3">
+          <input class="form-control form-control-sm" type="text" id="messageUser" name="messageUser" placeholder="Name" />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-7">
+          <textarea class="form-control form-control-sm" style="height: 150px;" id="messageText" name="messageText" placeholder="Message"></textarea>
+        </div>
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary">Send</button>
+      </div>
+    </form>
+  </div>
 </main>
 <%- include('./partials/footer') %>
