@@ -13,8 +13,8 @@ const messages = [
     added: new Date(),
   },
   {
-    text: "Killin the game!",
-    user: "Stunna boy",
+    text: "Game time!",
+    user: "Carter",
     added: new Date(),
   },
 ];
