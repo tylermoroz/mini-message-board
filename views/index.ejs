@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <%- include("./partials/navbar", {links: links}) %>
+    <ul class="messages-list">
+      <% for(let i = 0; i < messages.length; i++) { %>
+      <li class="message-item">
+        <h2><%= messages[i].text %></h2>
+        <div>
+          <p><%= messages[i].username %></p>
+          <p><%= new Date(messages[i].created_at).toLocaleString() %></p>
+          <a href="/message/<%= messages[i].id %>">Details</a>
+        </div>
+      </li>
+      <% } %>
+    </ul>
+  </body>
+</html>

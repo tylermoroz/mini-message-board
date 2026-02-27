@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <%- include("./partials/navbar", {links: links}) %>
+    <ul>
+      <li>
+        <h2>Message Details</h2>
+
+        <p>User: <%= message.username %></p>
+        <p>Text: <%= message.text %></p>
+        <p>Date: <%= message.created_at %></p>
+      </li>
+    </ul>
+  </body>
+</html>

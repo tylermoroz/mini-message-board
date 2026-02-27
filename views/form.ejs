@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <%- include("./partials/navbar", {links: links}) %>
+    <form action="/new" method="POST">
+      <header>New Message</header>
+      <div>
+        <label for="username">User:</label>
+        <input type="text" name="username" id="username" required />
+      </div>
+      <div>
+        <label for="text">Message:</label>
+        <textarea name="text" id="text" rows="4" required></textarea>
+      </div>
+      <button type="submit">Send</button>
+    </form>
+  </body>
+</html>

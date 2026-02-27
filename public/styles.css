@@ -1,0 +1,47 @@
+body {
+  background-color: antiquewhite;
+}
+
+ul {
+  list-style: none;
+  padding: 10px;
+  margin: 10px;
+}
+
+.messages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.message-item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 300px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 10px;
+  padding-left: 20px;
+}
+
+form header {
+  font-size: 20px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+form button {
+  width: 80px;
+}
