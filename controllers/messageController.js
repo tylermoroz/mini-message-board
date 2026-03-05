@@ -16,4 +16,10 @@ async function getMessageDetailsById(req, res) {
   });
 }
 
-module.exports = { getMessageDetailsById };
+async function deleteMessagePost(req, res) {
+  const { id } = req.params;
+  await db.deleteMessage(id);
+  res.redirect("/");
+}
+
+module.exports = { getMessageDetailsById, deleteMessagePost };

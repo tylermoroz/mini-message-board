@@ -12,6 +12,9 @@
         <p>User: <%= message.username %></p>
         <p>Text: <%= message.text %></p>
         <p>Date: <%= message.created_at %></p>
+        <form action="/message/<%= message.id %>/delete" method="POST">
+          <button type="submit">Delete</button>
+        </form>
       </li>
     </ul>
   </body>

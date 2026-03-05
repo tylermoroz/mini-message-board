@@ -1,10 +1,6 @@
 const pool = require("./pool");
 
 async function getMessages() {
-  const result = await pool.query(
-    "SELECT current_database(), current_schema()"
-  );
-  console.log(result.rows);
   const { rows } = await pool.query("SELECT * FROM messages");
   return rows;
 }
@@ -23,4 +19,8 @@ async function getMessageDetails(id) {
   return message;
 }
 
-module.exports = { getMessages, postMessage, getMessageDetails };
+async function deleteMessage(id) {
+  await pool.query("DELETE FROM messages WHERE id = $1", [id]);
+}
+
+module.exports = { getMessages, postMessage, getMessageDetails, deleteMessage };

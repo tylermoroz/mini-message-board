@@ -4,16 +4,17 @@
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <%- include("./partials/navbar", {links: links}) %>
+    <%- include("./partials/navbar", {links: links}) %> <%-
+    include("./partials/errors") %>
     <form action="/new" method="POST">
       <header>New Message</header>
       <div>
         <label for="username">User:</label>
-        <input type="text" name="username" id="username" required />
+        <input type="text" name="username" id="username" />
       </div>
       <div>
         <label for="text">Message:</label>
-        <textarea name="text" id="text" rows="4" required></textarea>
+        <textarea name="text" id="text" rows="4"></textarea>
       </div>
       <button type="submit">Send</button>
     </form>
